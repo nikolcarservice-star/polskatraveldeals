@@ -1,0 +1,110 @@
+{
+  "booking": {
+    "key": "booking",
+    "name": "Booking.com",
+    "programme": "travelpayouts",
+    "status": "pending",
+    "enabled": true,
+    "affiliateId": "",
+    "envVar": "BOOKING_AID",
+    "tokenParam": "aid",
+    "homepage": "https://www.booking.com/",
+    "searchUrlTemplate": "https://www.booking.com/index.html?aid={id}",
+    "allowedHosts": ["booking.com", "www.booking.com"],
+    "tools": {
+      "search": true,
+      "deepLinks": true,
+      "widget": true,
+      "banners": false,
+      "manualOffers": false
+    },
+    "widgetCode": "",
+    "cta": {
+      "label": { "pl": "Zobacz hotele", "uk": "Переглянути готелі", "ru": "Смотреть отели", "en": "View hotels" },
+      "style": "primary"
+    },
+    "links": [],
+    "note": "Rezerwacje i płatności odbywają się bezpośrednio na booking.com."
+  },
+  "aviasales": {
+    "key": "aviasales",
+    "name": "Aviasales",
+    "programme": "travelpayouts",
+    "status": "pending",
+    "enabled": true,
+    "affiliateId": "",
+    "envVar": "AVIASALES_MARKER",
+    "tokenParam": "marker",
+    "homepage": "https://www.aviasales.pl/",
+    "searchUrlTemplate": "https://www.aviasales.pl/?marker={id}",
+    "allowedHosts": ["aviasales.pl", "www.aviasales.pl", "aviasales.ru", "www.aviasales.ru"],
+    "tools": {
+      "search": true,
+      "deepLinks": true,
+      "widget": true,
+      "banners": false,
+      "manualOffers": false
+    },
+    "widgetCode": "",
+    "cta": {
+      "label": { "pl": "Szukaj lotów", "uk": "Шукати квитки", "ru": "Искать билеты", "en": "Search flights" },
+      "style": "primary"
+    },
+    "links": [],
+    "note": "Wyszukiwarka lotów; przekierowanie do aviasales.pl po kliknięciu."
+  },
+  "trip": {
+    "key": "trip",
+    "name": "Trip.com",
+    "programme": "travelpayouts",
+    "status": "pending",
+    "enabled": true,
+    "affiliateId": "",
+    "envVar": "TRIP_AID",
+    "tokenParam": "aid",
+    "homepage": "https://www.trip.com/",
+    "searchUrlTemplate": "https://www.trip.com/?aid={id}",
+    "allowedHosts": ["trip.com", "www.trip.com"],
+    "tools": {
+      "search": true,
+      "deepLinks": true,
+      "widget": true,
+      "banners": false,
+      "manualOffers": false
+    },
+    "widgetCode": "",
+    "cta": {
+      "label": { "pl": "Zobacz oferty Trip.com", "uk": "Пропозиції Trip.com", "ru": "Предложения Trip.com", "en": "Trip.com offers" },
+      "style": "primary"
+    },
+    "links": [],
+    "note": "Osobna konfiguracja programu Trip.com (aid). Hotele i przeloty."
+  },
+  "travellead": {
+    "key": "travellead",
+    "name": "TravelLead",
+    "programme": "travellead",
+    "status": "pending",
+    "enabled": true,
+    "affiliateId": "",
+    "envVar": "TRAVELLEAD_ID",
+    "tokenParam": "id",
+    "homepage": "",
+    "searchUrlTemplate": "",
+    "allowedHosts": [],
+    "tools": {
+      "search": false,
+      "deepLinks": true,
+      "widget": false,
+      "banners": false,
+      "manualOffers": true
+    },
+    "widgetCode": "",
+    "cta": {
+      "label": { "pl": "Zobacz wycieczkę", "uk": "Переглянути тур", "ru": "Смотреть тур", "en": "View tour" },
+      "style": "primary"
+    },
+    "links": [],
+    "note": "Katalog wycieczek all inclusive, gorących ofert i propozycji rodzinnych. Oferty dodajesz ręcznie po sprawdzeniu źródła."
+  }
+}

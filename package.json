@@ -1,12 +1,14 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "polska-travel-deals",
+  "version": "1.0.0",
   "private": true,
+  "description": "POLSKA TRAVEL DEALS — Odkrywaj świat. Podróżuj taniej. Wyszukiwarka wycieczek, biletów lotniczych, hoteli i wycieczek fakultatywnych.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "16.4.1",

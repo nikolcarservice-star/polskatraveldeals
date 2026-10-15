@@ -1,0 +1,545 @@
+[
+  {
+    "id": "tour-zakynthos-7",
+    "kind": "tour",
+    "partner": "trip",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "grecja",
+    "title": {
+      "pl": "Zakynthos — 7 nocy, all inclusive",
+      "uk": "Закінфос — 7 ночей, all inclusive",
+      "ru": "Закинфос — 7 ночей, all inclusive",
+      "en": "Zakynthos — 7 nights, all inclusive"
+    },
+    "price": 3149,
+    "oldPrice": 3599,
+    "rating": 4.8,
+    "reviews": 412,
+    "nights": 7,
+    "meta": {
+      "pl": "All inclusive · 4★ · Luton–Zakynthos",
+      "uk": "All inclusive · 4★ · Закінфос",
+      "ru": "All inclusive · 4★ · Закинфос",
+      "en": "All inclusive · 4★ · Zakynthos"
+    },
+    "tag": {
+      "pl": "Bestseller",
+      "uk": "Бестселер",
+      "ru": "Хит продаж",
+      "en": "Bestseller"
+    }
+  },
+  {
+    "id": "tour-costa-del-sol-10",
+    "kind": "tour",
+    "partner": "trip",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "hiszpania",
+    "title": {
+      "pl": "Costa del Sol — 10 nocy ze śniadaniem",
+      "uk": "Коста-дель-Соль — 10 ночей зі сніданком",
+      "ru": "Коста-дель-Соль — 10 ночей с завтраком",
+      "en": "Costa del Sol — 10 nights with breakfast"
+    },
+    "price": 3799,
+    "oldPrice": 4199,
+    "rating": 4.6,
+    "reviews": 288,
+    "nights": 10,
+    "meta": {
+      "pl": "Śniadania · 4★ · Fuengirola",
+      "uk": "Сніданки · 4★ · Фуенхірола",
+      "ru": "Завтраки · 4★ · Фуэнхирола",
+      "en": "Breakfast · 4★ · Fuengirola"
+    }
+  },
+  {
+    "id": "tour-kapadocja-8",
+    "kind": "tour",
+    "partner": "trip",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "turcja",
+    "title": {
+      "pl": "Kapadocja — 8 nocy ze zwiedzaniem",
+      "uk": "Кападокія — 8 ночей з екскурсіями",
+      "ru": "Каппадокия — 8 ночей с экскурсиями",
+      "en": "Cappadocia — 8 nights with tours"
+    },
+    "price": 3299,
+    "rating": 4.9,
+    "reviews": 521,
+    "nights": 8,
+    "meta": {
+      "pl": "Śniadania i kolacje · 5★ · Göreme",
+      "uk": "Сніданки та вечері · 5★ · Гьореме",
+      "ru": "Завтраки и ужины · 5★ · Гёреме",
+      "en": "Breakfast and dinner · 5★ · Göreme"
+    },
+    "tag": {
+      "pl": "Polecane",
+      "uk": "Рекомендуємо",
+      "ru": "Рекомендуем",
+      "en": "Recommended"
+    }
+  },
+  {
+    "id": "tour-amalfi-7",
+    "kind": "tour",
+    "partner": "trip",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "wlochy",
+    "title": {
+      "pl": "Wybrzeże Amalfi — 7 nocy",
+      "uk": "Узбережжя Амальфі — 7 ночей",
+      "ru": "Побережье Амальфи — 7 ночей",
+      "en": "Amalfi Coast — 7 nights"
+    },
+    "price": 4149,
+    "rating": 4.7,
+    "reviews": 196,
+    "nights": 7,
+    "meta": {
+      "pl": "Śniadania · 4★ · Salerno",
+      "uk": "Сніданки · 4★ · Салерно",
+      "ru": "Завтраки · 4★ · Салерно",
+      "en": "Breakfast · 4★ · Salerno"
+    }
+  },
+  {
+    "id": "tour-dubrownik-7",
+    "kind": "tour",
+    "partner": "trip",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "chorwacja",
+    "title": {
+      "pl": "Dubrownik — 7 nocy, apartament",
+      "uk": "Дубровник — 7 ночей, апартаменти",
+      "ru": "Дубровник — 7 ночей, апартаменты",
+      "en": "Dubrovnik — 7 nights, apartment"
+    },
+    "price": 2649,
+    "oldPrice": 2899,
+    "rating": 4.5,
+    "reviews": 174,
+    "nights": 7,
+    "meta": {
+      "pl": "Apartament · 3★ · Baška Voda",
+      "uk": "Апартаменти · 3★ · Башка-Вода",
+      "ru": "Апартаменты · 3★ · Башка-Вода",
+      "en": "Apartment · 3★ · Baška Voda"
+    }
+  },
+  {
+    "id": "tour-phuket-12",
+    "kind": "tour",
+    "partner": "trip",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "tajlandia",
+    "title": {
+      "pl": "Phuket — 12 nocy, loty i hotel",
+      "uk": "Пхукет — 12 ночей, переліт і готель",
+      "ru": "Пхукет — 12 ночей, перелёт и отель",
+      "en": "Phuket — 12 nights, flights and hotel"
+    },
+    "price": 7299,
+    "oldPrice": 7999,
+    "rating": 4.8,
+    "reviews": 342,
+    "nights": 12,
+    "meta": {
+      "pl": "Śniadania · 4★ · Karon Beach",
+      "uk": "Сніданки · 4★ · Карон",
+      "ru": "Завтраки · 4★ · Карон",
+      "en": "Breakfast · 4★ · Karon Beach"
+    }
+  },
+  {
+    "id": "flight-waw-ltn",
+    "kind": "flight",
+    "partner": "aviasales",
+    "url": "",
+    "source": "",
+    "published": false,
+    "from": "warszawa",
+    "to": "londyn",
+    "price": 198,
+    "rating": 4.4,
+    "reviews": 2140,
+    "meta": {
+      "pl": "Bezpośredni · 2h 25m",
+      "uk": "Прямо · 2 год 25хв",
+      "ru": "Прямой · 2 ч 25 мин",
+      "en": "Direct · 2h 25m"
+    },
+    "tag": {
+      "pl": "Najtaniej",
+      "uk": "Найдешевше",
+      "ru": "Дешевле всего",
+      "en": "Cheapest"
+    }
+  },
+  {
+    "id": "flight-krk-cdg",
+    "kind": "flight",
+    "partner": "aviasales",
+    "url": "",
+    "source": "",
+    "published": false,
+    "from": "krakow",
+    "to": "paryz",
+    "price": 249,
+    "rating": 4.3,
+    "reviews": 1620,
+    "meta": {
+      "pl": "1 przesiadka · 4h 40m",
+      "uk": "1 пересадка · 4 год 40хв",
+      "ru": "1 пересадка · 4 ч 40 мин",
+      "en": "1 stop · 4h 40m"
+    }
+  },
+  {
+    "id": "flight-kat-fco",
+    "kind": "flight",
+    "partner": "aviasales",
+    "url": "",
+    "source": "",
+    "published": false,
+    "from": "katowice",
+    "to": "rzym",
+    "price": 289,
+    "oldPrice": 349,
+    "rating": 4.5,
+    "reviews": 980,
+    "meta": {
+      "pl": "Bezpośredni · 2h 10m",
+      "uk": "Прямо · 2 год 10хв",
+      "ru": "Прямой · 2 ч 10 мин",
+      "en": "Direct · 2h 10m"
+    }
+  },
+  {
+    "id": "flight-wro-ams",
+    "kind": "flight",
+    "partner": "aviasales",
+    "url": "",
+    "source": "",
+    "published": false,
+    "from": "wroclaw",
+    "to": "amsterdam",
+    "price": 319,
+    "rating": 4.2,
+    "reviews": 760,
+    "meta": {
+      "pl": "Bezpośredni · 1h 50m",
+      "uk": "Прямо · 1 год 50хв",
+      "ru": "Прямой · 1 ч 50 мин",
+      "en": "Direct · 1h 50m"
+    }
+  },
+  {
+    "id": "flight-waw-jfk",
+    "kind": "flight",
+    "partner": "aviasales",
+    "url": "",
+    "source": "",
+    "published": false,
+    "from": "warszawa",
+    "to": "nowy-jork",
+    "price": 2199,
+    "oldPrice": 2599,
+    "rating": 4.6,
+    "reviews": 540,
+    "meta": {
+      "pl": "Bezpośredni · 9h 40m",
+      "uk": "Прямо · 9 год 40хв",
+      "ru": "Прямой · 9 ч 40 мин",
+      "en": "Direct · 9h 40m"
+    }
+  },
+  {
+    "id": "flight-gdn-bcn",
+    "kind": "flight",
+    "partner": "aviasales",
+    "url": "",
+    "source": "",
+    "published": false,
+    "from": "gdansk",
+    "to": "barcelona",
+    "price": 379,
+    "rating": 4.4,
+    "reviews": 610,
+    "meta": {
+      "pl": "Bezpośredni · 3h 05m",
+      "uk": "Прямо · 3 год 05хв",
+      "ru": "Прямой · 3 ч 05 мин",
+      "en": "Direct · 3h 05m"
+    }
+  },
+  {
+    "id": "hotel-antalya-5",
+    "kind": "hotel",
+    "partner": "booking",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "turcja",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Falezlerden_Antalya_Konyaalt%C4%B1_Plaj%C4%B1na_do%C4%9Fru_bir_g%C3%B6r%C3%BCn%C3%BCm.jpg/1280px-Falezlerden_Antalya_Konyaalt%C4%B1_Plaj%C4%B1na_do%C4%9Fru_bir_g%C3%B6r%C3%BCn%C3%BCm.jpg",
+    "title": {
+      "pl": "Antalya 5★ — resort z plażą",
+      "uk": "Анталія 5★ — курорт з пляжем",
+      "ru": "Анталья 5★ — курорт с пляжем",
+      "en": "Antalya 5★ — beachfront resort"
+    },
+    "price": 429,
+    "oldPrice": 499,
+    "rating": 4.9,
+    "reviews": 1840,
+    "meta": {
+      "pl": "All inclusive · pokój 2 os. / noc",
+      "uk": "All inclusive · 2 особи / ніч",
+      "ru": "All inclusive · 2 чел. / ночь",
+      "en": "All inclusive · double room / night"
+    },
+    "tag": {
+      "pl": "Top ocena",
+      "uk": "Топ оцінка",
+      "ru": "Высший рейтинг",
+      "en": "Top rated"
+    }
+  },
+  {
+    "id": "hotel-burgas-4",
+    "kind": "hotel",
+    "partner": "booking",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "bulgaria",
+    "title": {
+      "pl": "Słoneczny Brzeg 4★ — przy plaży",
+      "uk": "Сонячний Берег 4★ — біля пляжу",
+      "ru": "Солнечный Берег 4★ — у пляжа",
+      "en": "Sunny Beach 4★ — by the beach"
+    },
+    "price": 259,
+    "rating": 4.4,
+    "reviews": 920,
+    "meta": {
+      "pl": "Śniadania i kolacje · pokój 2 os. / noc",
+      "uk": "Сніданки та вечері · 2 особи / ніч",
+      "ru": "Завтраки и ужины · 2 чел. / ночь",
+      "en": "Half board · double room / night"
+    }
+  },
+  {
+    "id": "hotel-hurghada-5",
+    "kind": "hotel",
+    "partner": "booking",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "egipt",
+    "title": {
+      "pl": "Hurghada 5★ — rafa przy hotelu",
+      "uk": "Хургада 5★ — риф біля готелю",
+      "ru": "Хургада 5★ — риф у отеля",
+      "en": "Hurghada 5★ — house reef"
+    },
+    "price": 349,
+    "oldPrice": 399,
+    "rating": 4.7,
+    "reviews": 1310,
+    "meta": {
+      "pl": "All inclusive · pokój 2 os. / noc",
+      "uk": "All inclusive · 2 особи / ніч",
+      "ru": "All inclusive · 2 чел. / ночь",
+      "en": "All inclusive · double room / night"
+    }
+  },
+  {
+    "id": "hotel-bali-villa",
+    "kind": "hotel",
+    "partner": "booking",
+    "url": "",
+    "source": "",
+    "published": false,
+    "destination": "bali",
+    "title": {
+      "pl": "Ubud, Bali — willa z basenem",
+      "uk": "Убуд, Балі — вілла з басейном",
+      "ru": "Убуд, Бали — вилла с бассейном",
+      "en": "Ubud, Bali — pool villa"
+    },
+    "price": 489,
+    "rating": 4.9,
+    "reviews": 660,
+    "meta": {
+      "pl": "Śniadania · willa 2 os. / noc",
+      "uk": "Сніданки · вілла 2 особи / ніч",
+      "ru": "Завтраки · вилла 2 чел. / ночь",
+      "en": "Breakfast · 2-bedroom villa / night"
+    }
+  },
+  {
+    "id": "exc-krakow-old-town",
+    "kind": "excursion",
+    "partner": "travellead",
+    "url": "",
+    "source": "",
+    "published": false,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Krakow_Rynek_Glowny_panorama_2.jpg/1280px-Krakow_Rynek_Glowny_panorama_2.jpg",
+    "title": {
+      "pl": "Kraków — Wawel i Stare Miasto",
+      "uk": "Краків — Вавель і Старе Місто",
+      "ru": "Краков — Вавель и Старый город",
+      "en": "Kraków — Wawel and the Old Town"
+    },
+    "price": 129,
+    "rating": 4.9,
+    "reviews": 2140,
+    "meta": {
+      "pl": "3 godziny · przewodnik PL/EN/UA",
+      "uk": "3 години · гід PL/EN/UA",
+      "ru": "3 часа · гид PL/EN/UA",
+      "en": "3 hours · guide PL/EN/UA"
+    },
+    "tag": {
+      "pl": "Najczęściej wybierane",
+      "uk": "Найчастіше обирають",
+      "ru": "Выбирают чаще всего",
+      "en": "Most booked"
+    }
+  },
+  {
+    "id": "exc-wieliczka",
+    "kind": "excursion",
+    "partner": "travellead",
+    "url": "",
+    "source": "",
+    "published": false,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Wieliczka_widok_na_Zamek_%C5%BBupny_Sztygar%C3%B3wk%C4%99_Rynek_G%C3%B3rny_w_Wieliczce.jpg/1280px-Wieliczka_widok_na_Zamek_%C5%BBupny_Sztygar%C3%B3wk%C4%99_Rynek_G%C3%B3rny_w_Wieliczce.jpg",
+    "title": {
+      "pl": "Kopalnia soli Wieliczka",
+      "uk": "Соляна копальня Величка",
+      "ru": "Соляная шахта Величка",
+      "en": "Wieliczka Salt Mine"
+    },
+    "price": 89,
+    "rating": 4.8,
+    "reviews": 1720,
+    "meta": {
+      "pl": "Bilet ze zwiedzaniem · 2,5 h",
+      "uk": "Квиток з екскурсією · 2,5 год",
+      "ru": "Билет с экскурсией · 2,5 ч",
+      "en": "Ticket with tour · 2.5 h"
+    }
+  },
+  {
+    "id": "exc-malbork",
+    "kind": "excursion",
+    "partner": "travellead",
+    "url": "",
+    "source": "",
+    "published": false,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Zesp%C3%B3%C5%82_Zamku_Krzy%C5%BCackiego_MALBORK_01.jpg/1280px-Zesp%C3%B3%C5%82_Zamku_Krzy%C5%BCackiego_MALBORK_01.jpg",
+    "title": {
+      "pl": "Zamek w Malborku — cały dzień",
+      "uk": "Замок у Мальборку — цілий день",
+      "ru": "Замок в Мальбурге — целый день",
+      "en": "Malbork Castle — full day"
+    },
+    "price": 159,
+    "rating": 4.7,
+    "reviews": 880,
+    "meta": {
+      "pl": "Transport z Gdańska · 10 h",
+      "uk": "Транспорт з Гданська · 10 год",
+      "ru": "Трансфер из Гданьска · 10 ч",
+      "en": "Transfer from Gdańsk · 10 h"
+    }
+  },
+  {
+    "id": "exc-gdansk",
+    "kind": "excursion",
+    "partner": "travellead",
+    "url": "",
+    "source": "",
+    "published": false,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Calle_Dlugie_Pobrzeze%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_06.jpg/1280px-Calle_Dlugie_Pobrzeze%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_06.jpg",
+    "title": {
+      "pl": "Gdańsk — Stare Miasto i Westerplatte",
+      "uk": "Гданськ — Старе Місто і Вестерплатте",
+      "ru": "Гданьск — Старый город и Вестерплатте",
+      "en": "Gdańsk — Old Town and Westerplatte"
+    },
+    "price": 99,
+    "rating": 4.6,
+    "reviews": 640,
+    "meta": {
+      "pl": "4 godziny · spacer z przewodnikiem",
+      "uk": "4 години · прогулянка з гідом",
+      "ru": "4 часа · прогулка с гидом",
+      "en": "4 hours · guided walk"
+    }
+  },
+  {
+    "id": "exc-zakopane",
+    "kind": "excursion",
+    "partner": "travellead",
+    "url": "",
+    "source": "",
+    "published": false,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Zakopane_T58.jpg/1280px-Zakopane_T58.jpg",
+    "title": {
+      "pl": "Zakopane i Morskie Oko",
+      "uk": "Закопане і Морське Око",
+      "ru": "Закопане и Морское Око",
+      "en": "Zakopane and Morskie Oko"
+    },
+    "price": 149,
+    "rating": 4.7,
+    "reviews": 1120,
+    "meta": {
+      "pl": "Całodniowa wycieczka · z Krakowa",
+      "uk": "Цілоденна поїздка · з Кракова",
+      "ru": "Поездка на весь день · из Кракова",
+      "en": "Full-day trip · from Kraków"
+    }
+  },
+  {
+    "id": "exc-auschwitz",
+    "kind": "excursion",
+    "partner": "travellead",
+    "url": "",
+    "source": "",
+    "published": false,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Auschwitz_I_%2822_May_2010%29_b.jpg/1280px-Auschwitz_I_%2822_May_2010%29_b.jpg",
+    "title": {
+      "pl": "Auschwitz-Birkenau — zwiedzanie",
+      "uk": "Аушвіц-Біркенау — екскурсія",
+      "ru": "Аушвиц-Биркенау — экскурсия",
+      "en": "Auschwitz-Birkenau — guided visit"
+    },
+    "price": 179,
+    "rating": 4.9,
+    "reviews": 1450,
+    "meta": {
+      "pl": "Muzeum + Birkenau · 7 h",
+      "uk": "Музей + Біркенау · 7 год",
+      "ru": "Музей + Биркенау · 7 ч",
+      "en": "Museum + Birkenau · 7 h"
+    }
+  }
+]

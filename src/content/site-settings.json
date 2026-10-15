@@ -1,0 +1,27 @@
+{
+  "projectName": "POLSKA TRAVEL DEALS",
+  "legalName": "Polska Travel Deals",
+  "slogan": "Odkrywaj świat. Podróżuj taniej.",
+  "domain": "polskatraveldeals.vercel.app",
+  "url": "https://polskatraveldeals.vercel.app",
+  "contactEmail": "kontakt@polskatraveldeals.vercel.app",
+  "supportEmail": "pomoc@polskatraveldeals.vercel.app",
+  "legalEmail": "rodo@polskatraveldeals.vercel.app",
+  "telegram": "https://t.me/polska_travel_deals",
+  "telegramHandle": "@polska_travel_deals",
+  "seo": {
+    "title": "POLSKA TRAVEL DEALS — wycieczki, loty, hotele i wycieczki fakultatywne",
+    "description": "Porównuj oferty wycieczek, biletów lotniczych, hoteli i wycieczek fakultatywnych w jednym miejscu. Odkrywaj świat i podróżuj taniej z POLSKA TRAVEL DEALS.",
+    "keywords": "tanie wycieczki, porównywarka lotów, hotele, wycieczki fakultatywne, POLSKA TRAVEL DEALS"
+  },
+  "hero": {
+    "eyebrow": "Premium travel marketplace",
+    "lead": "Porównujemy oferty sprawdzonych partnerów — wycieczki, przeloty, hotele i lokalne atrakcje — żebyś znalazł najlepszą cenę w kilka sekund.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Amalfi_Coast_%28Italy%2C_October_2020%29_-_75_%2850558355441%29.jpg/1920px-Amalfi_Coast_%28Italy%2C_October_2020%29_-_75_%2850558355441%29.jpg"
+  },
+  "newsletter": {
+    "enabled": true,
+    "audience": ""
+  },
+  "updatedAt": "2026-10-15T00:00:00.000Z"
+}
