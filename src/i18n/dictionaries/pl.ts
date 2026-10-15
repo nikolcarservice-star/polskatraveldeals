@@ -102,6 +102,12 @@ export const pl = {
       },
     },
   },
+  flightsWidget: {
+    eyebrow: "Wyszukiwarka lotów",
+    title: "Znajdź i zarezerwuj przelot",
+    lead: "Porównaj ceny biletów z setek linii lotniczych i agencji. Rezerwacja odbywa się bezpośrednio u zaufanego partnera.",
+    note: "Wyszukiwarka działa na stronie partnera. Cena, bagaż i rezerwacja — zgodnie z warunkami przewoźnika lub agenta.",
+  },
   stats: {
     title: "Liczby, które mówią same za siebie",
     items: {

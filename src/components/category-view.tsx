@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { SearchPanel, type SearchType } from "@/components/search-panel";
 import { OfferExplorer } from "@/components/offer-explorer";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -16,12 +17,14 @@ export function CategoryView({
   title,
   lead,
   offers,
+  afterSearch,
 }: {
   dict: Dictionary;
   kind: OfferKind;
   title: string;
   lead: string;
   offers: Offer[];
+  afterSearch?: ReactNode;
 }) {
   return (
     <>
@@ -40,6 +43,10 @@ export function CategoryView({
       <div id="szukaj" className="container-page relative z-20 -mt-24 md:-mt-28">
         <SearchPanel dict={dict} initialType={KIND_TO_TYPE[kind]} />
       </div>
+
+      {afterSearch ? (
+        <section className="container-page pt-12 md:pt-16">{afterSearch}</section>
+      ) : null}
 
       <section className="container-page py-14 md:py-20">
         <OfferExplorer offers={offers} dict={dict} />
