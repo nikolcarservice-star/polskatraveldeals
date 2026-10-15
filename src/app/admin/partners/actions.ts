@@ -59,10 +59,7 @@ export async function savePartner(_prev: FormState, formData: FormData): Promise
   const status = text(formData, "status");
   if (!isStatus(status)) return { status: "error", message: "invalid" };
 
-  const ctaPl = text(formData, "ctaPl");
-  const ctaUk = text(formData, "ctaUk");
-  const ctaRu = text(formData, "ctaRu");
-  const ctaEn = text(formData, "ctaEn");
+  const cta = text(formData, "cta");
 
   const links = text(formData, "links")
     .split("\n")
@@ -101,13 +98,7 @@ export async function savePartner(_prev: FormState, formData: FormData): Promise
     widgetCode: text(formData, "widgetCode"),
     cta: {
       ...current.cta,
-      label: {
-        ...current.cta.label,
-        pl: ctaPl || current.cta.label.pl,
-        uk: ctaUk || current.cta.label.uk,
-        ru: ctaRu || current.cta.label.ru,
-        en: ctaEn || current.cta.label.en,
-      },
+      label: cta || current.cta.label,
     },
     links,
     note: text(formData, "note"),
@@ -159,15 +150,15 @@ export async function saveManualOffer(_prev: FormState, formData: FormData): Pro
     allowed.some((entry) => host === entry || host.endsWith(`.${entry}`));
   if (!hostOk) return { status: "error", message: "hosts-first" };
 
-  const titlePl = text(formData, "titlePl");
+  const title = text(formData, "title");
   const price = Number(text(formData, "price"));
   const source = text(formData, "source");
-  if (!titlePl || !source || !Number.isFinite(price) || price <= 0) {
+  if (!title || !source || !Number.isFinite(price) || price <= 0) {
     return { status: "error", message: "invalid" };
   }
 
   const editingId = text(formData, "id");
-  const baseId = editingId || slugify(titlePl) || `travellead-${Date.now()}`;
+  const baseId = editingId || slugify(title) || `travellead-${Date.now()}`;
   const id = editingId
     ? baseId
     : offers.some((offer) => offer.id === baseId)
@@ -185,12 +176,7 @@ export async function saveManualOffer(_prev: FormState, formData: FormData): Pro
     url,
     source,
     published: formData.get("published") === "on",
-    title: {
-      pl: titlePl,
-      uk: text(formData, "titleUk") || titlePl,
-      ru: text(formData, "titleRu") || titlePl,
-      en: text(formData, "titleEn") || titlePl,
-    },
+    title,
     destination: text(formData, "destination") || undefined,
     image: text(formData, "image") || undefined,
     price,

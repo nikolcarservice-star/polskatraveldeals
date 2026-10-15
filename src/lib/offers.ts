@@ -1,6 +1,5 @@
 import rawOffers from "@/content/offers.json";
-import type { Locale } from "@/lib/brand";
-import { CATEGORY_IMAGES, CITIES, DESTINATIONS, type Localized } from "@/lib/data";
+import { CATEGORY_IMAGES, CITIES, DESTINATIONS } from "@/lib/data";
 import {
   buildPartnerTarget,
   getPartner,
@@ -23,7 +22,7 @@ export interface Offer {
   source: string;
   /** Admin-controlled visibility switch; sample rows ship as `false`. */
   published: boolean;
-  title?: Localized;
+  title?: string;
   destination?: string;
   image?: string;
   price: number;
@@ -31,8 +30,8 @@ export interface Offer {
   rating: number;
   reviews: number;
   nights?: number;
-  meta?: Localized;
-  tag?: Localized;
+  meta?: string;
+  tag?: string;
   /** Airport keys for flights (title is composed from city names). */
   from?: string;
   to?: string;
@@ -40,14 +39,14 @@ export interface Offer {
 
 export const OFFERS: Offer[] = rawOffers as unknown as Offer[];
 
-/** Localised title; flights are composed from city names. */
-export function offerTitle(offer: Offer, locale: Locale): string {
+/** Title; flights are composed from city names. */
+export function offerTitle(offer: Offer): string {
   if (offer.from && offer.to) {
-    const from = CITIES[offer.from]?.[locale] ?? offer.from;
-    const to = CITIES[offer.to]?.[locale] ?? offer.to;
+    const from = CITIES[offer.from] ?? offer.from;
+    const to = CITIES[offer.to] ?? offer.to;
     return `${from} → ${to}`;
   }
-  return offer.title?.[locale] ?? offer.title?.pl ?? offer.id;
+  return offer.title ?? offer.id;
 }
 
 export function offerImage(offer: Offer): string {
@@ -100,7 +99,7 @@ export function offersByKind(kind: OfferKind): Offer[] {
 }
 
 export interface OfferLink {
-  /** Localised route through the /go click logger. */
+  /** Route through the /go click logger. */
   href: string;
   partner: Partner;
 }

@@ -28,7 +28,6 @@ export const pl = {
     admin: "Panel administracyjny",
     search: "Szukaj",
   },
-  localeSwitcher: { label: "Język", change: "Zmień język" },
   hero: {
     eyebrow: "Premium travel marketplace",
     title: "Odkrywaj świat.",
@@ -108,7 +107,6 @@ export const pl = {
       partners: "Zaufanych partnerów",
       destinations: "Kierunków na świecie",
       deals: "Ofert w bazie",
-      languages: "Wersje językowe",
     },
   },
   why: {
@@ -157,7 +155,7 @@ export const pl = {
     items: {
       anna: { name: "Anna K.", city: "Warszawa", text: "Wreszcie jedno miejsce, w którym widzę realne ceny, a nie oferty „od” z trzema gwiazdkami." },
       marek: { name: "Marek W.", city: "Kraków", text: "Znalazłem lot do Barcelony o 30% taniej niż w innej wyszukiwarce. Rezerwacja zajęła dwie minuty." },
-      olena: { name: "Olena P.", city: "Wrocław", text: "Świetny podział na wycieczki, loty i hotele. Wersja ukraińska bardzo ułatwia porównanie." },
+      olena: { name: "Olena P.", city: "Wrocław", text: "Świetny podział na wycieczki, loty i hotele. Wszystko jasne i czytelne." },
     },
   },
   newsletter: {
@@ -368,7 +366,7 @@ export const pl = {
       marker: "Travelpayouts marker",
       adminPassword: "Hasło administratora",
     },
-    stats: { pages: "Strony", locales: "Języki", offers: "Oferty", lastSaved: "Ostatni zapis" },
+    stats: { pages: "Strony", offers: "Oferty", lastSaved: "Ostatni zapis" },
   },
   emails: {
     brandLine: "POLSKA TRAVEL DEALS · Odkrywaj świat. Podróżuj taniej.",
@@ -410,7 +408,6 @@ export const pl = {
     verified: "Zweryfikowany partner",
     rating: "Ocena",
     of: "z",
-    language: "Język",
     currency: "Waluta",
     pln: "PLN",
   },

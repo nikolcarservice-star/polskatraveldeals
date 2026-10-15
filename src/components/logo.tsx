@@ -1,4 +1,4 @@
-import { BRAND, SLOGANS, type Locale } from "@/lib/brand";
+import { BRAND, SLOGAN } from "@/lib/brand";
 
 type Tone = "dark" | "light";
 type Variant = "horizontal" | "stacked" | "mark" | "wordmark";
@@ -86,14 +86,12 @@ export function BrandMark({
 }
 
 export function Logo({
-  locale,
   variant = "horizontal",
   tone = "dark",
   markSize = 42,
   showTagline = true,
   className = "",
 }: {
-  locale: Locale;
   variant?: Variant;
   tone?: Tone;
   markSize?: number;
@@ -121,7 +119,7 @@ export function Logo({
         <span
           className={`mt-1.5 font-sans text-[0.42em] font-medium uppercase tracking-[0.2em] ${secondary}`}
         >
-          {SLOGANS[locale]}
+          {SLOGAN}
         </span>
       ) : null}
     </span>

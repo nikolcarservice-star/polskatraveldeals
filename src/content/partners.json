@@ -20,7 +20,7 @@
     },
     "widgetCode": "",
     "cta": {
-      "label": { "pl": "Zobacz hotele", "uk": "Переглянути готелі", "ru": "Смотреть отели", "en": "View hotels" },
+      "label": "Zobacz hotele",
       "style": "primary"
     },
     "links": [],
@@ -47,7 +47,7 @@
     },
     "widgetCode": "",
     "cta": {
-      "label": { "pl": "Szukaj lotów", "uk": "Шукати квитки", "ru": "Искать билеты", "en": "Search flights" },
+      "label": "Szukaj lotów",
       "style": "primary"
     },
     "links": [],
@@ -74,7 +74,7 @@
     },
     "widgetCode": "",
     "cta": {
-      "label": { "pl": "Zobacz oferty Trip.com", "uk": "Пропозиції Trip.com", "ru": "Предложения Trip.com", "en": "Trip.com offers" },
+      "label": "Zobacz oferty Trip.com",
       "style": "primary"
     },
     "links": [],
@@ -101,7 +101,7 @@
     },
     "widgetCode": "",
     "cta": {
-      "label": { "pl": "Zobacz wycieczkę", "uk": "Переглянути тур", "ru": "Смотреть тур", "en": "View tour" },
+      "label": "Zobacz wycieczkę",
       "style": "primary"
     },
     "links": [],

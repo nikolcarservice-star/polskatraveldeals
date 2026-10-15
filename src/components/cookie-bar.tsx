@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
-import { localizedPath, type Locale } from "@/lib/brand";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 const KEY = "ptd-cookie-consent";
@@ -34,7 +33,7 @@ function write(value: "all" | "essential") {
   window.dispatchEvent(new Event(EVENT));
 }
 
-export function CookieBar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export function CookieBar({ dict }: { dict: Dictionary }) {
   const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   if (stored !== null) return null;
 
@@ -48,7 +47,7 @@ export function CookieBar({ locale, dict }: { locale: Locale; dict: Dictionary }
         <p className="flex-1 text-sm leading-relaxed text-ivory-200/85">
           {dict.cookieBar.text}{" "}
           <Link
-            href={localizedPath(locale, "/legal/polityka-cookies")}
+            href="/legal/polityka-cookies"
             className="font-semibold text-gold-300 underline underline-offset-4"
           >
             {dict.cookieBar.more}

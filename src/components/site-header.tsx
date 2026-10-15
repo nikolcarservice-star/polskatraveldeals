@@ -3,61 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { LOCALES, LOCALE_META, localizedPath, BRAND, type Locale } from "@/lib/brand";
-import { parseLocaleFromPath } from "@/i18n/config";
+import { BRAND } from "@/lib/brand";
 import { Logo } from "@/components/logo";
 import type { Dictionary } from "@/i18n/dictionaries";
 
-const COOKIE = "ptd-locale";
-
-function rememberLocale(locale: Locale) {
-  document.cookie = `${COOKIE}=${locale}; path=/; max-age=31536000; samesite=lax`;
-}
-
-export function LanguageSwitcher({
-  locale,
-  compact = false,
-}: {
-  locale: Locale;
-  compact?: boolean;
-}) {
-  const pathname = usePathname() ?? "/";
-  const { segments } = parseLocaleFromPath(pathname);
-  const rest = segments.length ? `/${segments.join("/")}` : "";
-
-  return (
-    <div className="flex items-center gap-1 rounded-full border border-ink-900/10 bg-white/70 p-1">
-      {LOCALES.map((code) => {
-        const active = code === locale;
-        return (
-          <Link
-            key={code}
-            href={localizedPath(code, rest)}
-            lang={LOCALE_META[code].htmlLang}
-            hrefLang={LOCALE_META[code].hreflang}
-            onClick={() => rememberLocale(code)}
-            aria-current={active ? "true" : undefined}
-            title={LOCALE_META[code].name}
-            className={[
-              "rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wider transition",
-              active
-                ? "bg-navy-800 text-white shadow-sm"
-                : "text-ink-700 hover:bg-ivory-200 hover:text-navy-800",
-              compact ? "px-2" : "",
-            ].join(" ")}
-          >
-            {compact ? LOCALE_META[code].flag : code}
-          </Link>
-        );
-      })}
-    </div>
-  );
-}
-
-export function SiteHeader({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export function SiteHeader({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname() ?? "/";
-  const { segments } = parseLocaleFromPath(pathname);
+  const segments = pathname.split("/").filter(Boolean);
 
   const nav = [
     { href: "/tours", label: dict.nav.tours },
@@ -85,9 +38,6 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Dictionary 
             >
               Telegram
             </a>
-            <div className="hidden sm:block">
-              <LanguageSwitcher locale={locale} compact />
-            </div>
           </div>
         </div>
       </div>
@@ -95,18 +45,18 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Dictionary 
       <div className="border-b border-ink-900/10 bg-ivory-100/85 backdrop-blur-xl">
         <div className="container-page flex h-16 items-center justify-between gap-6 md:h-20">
           <Link
-            href={localizedPath(locale, "/")}
+            href="/"
             aria-label={`${BRAND.name} — ${dict.footer.tagline}`}
             className="shrink-0 text-[0.62rem] sm:text-[0.72rem]"
           >
-            <Logo locale={locale} markSize={40} showTagline={false} />
+            <Logo markSize={40} showTagline={false} />
           </Link>
 
           <nav aria-label={dict.nav.menu} className="hidden items-center gap-1 lg:flex">
             {nav.map((item) => (
               <Link
                 key={item.href}
-                href={localizedPath(locale, item.href)}
+                href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={[
                   "relative rounded-full px-3.5 py-2 text-sm font-medium transition",
@@ -124,11 +74,8 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Dictionary 
           </nav>
 
           <div className="flex items-center gap-2.5">
-            <div className="hidden md:block">
-              <LanguageSwitcher locale={locale} />
-            </div>
             <Link
-              href={localizedPath(locale, "/#szukaj")}
+              href="/#szukaj"
               className="hidden rounded-full bg-navy-800 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_25px_-12px_rgb(15_47_82/0.9)] transition hover:bg-navy-700 sm:inline-flex"
             >
               {dict.nav.search}
@@ -158,7 +105,7 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Dictionary 
               {nav.map((item) => (
                 <Link
                   key={item.href}
-                  href={localizedPath(locale, item.href)}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-3 py-3 text-base font-medium text-ink-800 transition hover:bg-white hover:text-navy-800"
                 >
@@ -166,7 +113,6 @@ export function SiteHeader({ locale, dict }: { locale: Locale; dict: Dictionary 
                 </Link>
               ))}
               <div className="mt-3 flex items-center justify-between gap-3 border-t border-ink-900/10 pt-4">
-                <LanguageSwitcher locale={locale} />
                 <a
                   href="https://t.me/polska_travel_deals"
                   target="_blank"

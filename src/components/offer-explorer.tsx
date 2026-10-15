@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Locale } from "@/lib/brand";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { formatPrice } from "@/lib/format";
 import type { Offer, OfferKind } from "@/lib/offers";
@@ -31,14 +30,12 @@ function chip(active: boolean) {
 
 export function OfferExplorer({
   offers,
-  locale,
   dict,
   showKinds = false,
   defaultKind = "all",
   title,
 }: {
   offers: Offer[];
-  locale: Locale;
   dict: Dictionary;
   showKinds?: boolean;
   defaultKind?: KindFilter;
@@ -76,7 +73,7 @@ export function OfferExplorer({
   if (offers.length === 0) {
     return (
       <div className="flex flex-col gap-6">
-        <OffersEmpty locale={locale} dict={dict} />
+        <OffersEmpty dict={dict} />
         <p className="text-xs leading-relaxed text-ink-600/80">{dict.search.disclaimer}</p>
       </div>
     );
@@ -118,7 +115,7 @@ export function OfferExplorer({
                 onClick={() => setMaxPrice(band)}
                 className={chip(maxPrice === band)}
               >
-                ≤ {formatPrice(band, locale)}
+                ≤ {formatPrice(band)}
               </button>
             ))}
           </div>
@@ -161,7 +158,7 @@ export function OfferExplorer({
       ) : (
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {visible.map((offer) => (
-            <OfferCard key={offer.id} offer={offer} locale={locale} dict={dict} />
+            <OfferCard key={offer.id} offer={offer} dict={dict} />
           ))}
         </div>
       )}

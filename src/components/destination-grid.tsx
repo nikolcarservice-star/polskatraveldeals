@@ -2,19 +2,16 @@
 
 import { useMemo, useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries";
-import type { Locale } from "@/lib/brand";
 import { REGIONS, type Destination, type RegionKey } from "@/lib/data";
 import { DestinationCard } from "@/components/destination-card";
 
 export function DestinationGrid({
   destinations,
-  locale,
   dict,
   showRegions = true,
   priorityCount = 4,
 }: {
   destinations: Destination[];
-  locale: Locale;
   dict: Dictionary;
   showRegions?: boolean;
   priorityCount?: number;
@@ -67,7 +64,7 @@ export function DestinationGrid({
                   : "border border-ink-900/12 bg-white text-ink-700 hover:border-navy-600 hover:text-navy-700",
               ].join(" ")}
             >
-              {item.label[locale]}
+              {item.label}
             </button>
           ))}
         </div>
@@ -83,7 +80,6 @@ export function DestinationGrid({
             <DestinationCard
               key={destination.slug}
               destination={destination}
-              locale={locale}
               dict={dict}
               priority={index < priorityCount}
             />

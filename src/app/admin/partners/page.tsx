@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getDictionary } from "@/i18n/dictionaries";
-import { DEFAULT_LOCALE } from "@/lib/brand";
+import { dict } from "@/i18n/dictionaries";
 import { isAdminAuthenticated } from "@/lib/admin-auth";
 import { PARTNERS, PARTNER_KEYS, partnerAcceptsOffers } from "@/lib/partners";
 import { readOffersFile, readPartnersFile } from "@/lib/content-store";
@@ -19,7 +18,6 @@ export const metadata: Metadata = {
 export default async function AdminPartnersPage() {
   if (!(await isAdminAuthenticated())) redirect("/admin");
 
-  const dict = getDictionary(DEFAULT_LOCALE);
   const file = await readPartnersFile();
   const offers = await readOffersFile();
   const stats = await readClickStats();

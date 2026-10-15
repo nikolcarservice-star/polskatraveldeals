@@ -166,7 +166,7 @@ export const legalPl: Record<LegalSlug, LegalDoc> = {
         id: "rodzaje",
         heading: "2. Jakie cookies stosujemy",
         paragraphs: [
-          "Niezbędne — utrzymują sesję i bezpieczeństwo; bez nich serwis nie działa. Preferencyjne — zapamiętują wybrany język (ciasteczko ptd-locale). Funkcjonalne — zapamiętują zgodę wyrażoną w banerze cookies.",
+          "Niezbędne — utrzymują sesję i bezpieczeństwo; bez nich serwis nie działa. Funkcjonalne — zapamiętują zgodę wyrażoną w banerze cookies.",
           "Analityczne narzędzia mogą zostać uruchomione wyłącznie po wyrażeniu zgody. Partnerzy, do których przechodzisz, stosują własne cookies zgodnie ze swoimi politykami.",
         ],
       },

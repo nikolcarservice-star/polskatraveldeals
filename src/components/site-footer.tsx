@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { BRAND, localizedPath, type Locale } from "@/lib/brand";
+import { BRAND } from "@/lib/brand";
 import { Logo } from "@/components/logo";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { IMAGE_CREDITS } from "@/lib/data";
 
-export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary }) {
-  const link = (href: string) => localizedPath(locale, href);
-
+export function SiteFooter({ dict }: { dict: Dictionary }) {
   const columns: { title: string; items: { href: string; label: string }[] }[] = [
     {
       title: dict.footer.explore,
@@ -43,7 +41,7 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
       <div className="container-page grid gap-12 py-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="max-w-sm">
           <div className="text-[0.7rem]">
-            <Logo locale={locale} tone="light" markSize={46} showTagline />
+            <Logo tone="light" markSize={46} showTagline />
           </div>
           <p className="mt-6 text-sm leading-relaxed text-ivory-300/75">
             {dict.footer.disclaimer}
@@ -72,7 +70,7 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
               {col.items.map((item) => (
                 <li key={item.href}>
                   <Link
-                    href={link(item.href)}
+                    href={item.href}
                     className="text-sm text-ivory-200/80 transition hover:text-gold-300"
                   >
                     {item.label}
@@ -97,7 +95,7 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
             <a href={`mailto:${BRAND.email}`} className="hover:text-gold-300">
               {BRAND.email}
             </a>
-            <Link href={link("/sitemap")} className="hover:text-gold-300">
+            <Link href="/sitemap" className="hover:text-gold-300">
               {dict.footer.sitemap}
             </Link>
             <span className="text-ivory-300/40">{IMAGE_CREDITS}</span>

@@ -1,35 +1,28 @@
-import type { Locale } from "@/lib/brand";
+const LOCALE_TAG = "pl-PL";
 
-const LOCALE_TAGS: Record<Locale, string> = {
-  pl: "pl-PL",
-  uk: "uk-UA",
-  ru: "ru-RU",
-  en: "en-GB",
-};
-
-export function formatPrice(amount: number, locale: Locale): string {
-  return new Intl.NumberFormat(LOCALE_TAGS[locale], {
+export function formatPrice(amount: number): string {
+  return new Intl.NumberFormat(LOCALE_TAG, {
     style: "currency",
     currency: "PLN",
     maximumFractionDigits: 0,
   }).format(amount);
 }
 
-export function formatNumber(value: number, locale: Locale): string {
-  return new Intl.NumberFormat(LOCALE_TAGS[locale]).format(value);
+export function formatNumber(value: number): string {
+  return new Intl.NumberFormat(LOCALE_TAG).format(value);
 }
 
-export function formatRating(value: number, locale: Locale): string {
-  return new Intl.NumberFormat(LOCALE_TAGS[locale], {
+export function formatRating(value: number): string {
+  return new Intl.NumberFormat(LOCALE_TAG, {
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   }).format(value);
 }
 
-export function formatDateTime(iso: string, locale: Locale): string {
+export function formatDateTime(iso: string): string {
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return iso;
-  return new Intl.DateTimeFormat(LOCALE_TAGS[locale], {
+  return new Intl.DateTimeFormat(LOCALE_TAG, {
     dateStyle: "short",
     timeStyle: "short",
   }).format(date);

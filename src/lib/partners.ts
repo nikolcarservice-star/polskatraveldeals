@@ -1,5 +1,4 @@
 import rawPartners from "@/content/partners.json";
-import type { Locale } from "@/lib/brand";
 
 export type PartnerKey = "booking" | "aviasales" | "trip" | "travellead";
 
@@ -43,7 +42,7 @@ export interface Partner {
   };
   /** Official partner widget snippet, pasted by the admin. */
   widgetCode: string;
-  cta: { label: Record<Locale, string>; style: "primary" | "secondary" };
+  cta: { label: string; style: "primary" | "secondary" };
   links: PartnerLink[];
   note: string;
 }
@@ -132,11 +131,6 @@ export function buildPartnerTarget(
     }
   }
   return target;
-}
-
-/** Localised CTA label; falls back to the Polish copy. */
-export function partnerCtaLabel(partner: Partner, locale: Locale): string {
-  return partner.cta.label[locale] || partner.cta.label.pl || partner.name;
 }
 
 /** Publicly visible widget snippet (only when the programme is approved). */

@@ -2,7 +2,6 @@
 
 import { useMemo, useState, useActionState } from "react";
 import Link from "next/link";
-import { LOCALES, LOCALE_META, type Locale } from "@/lib/brand";
 import { DESTINATIONS } from "@/lib/data";
 import { PARTNERS, PARTNER_LIST } from "@/lib/partners";
 import { OFFERS, offerTitle, visibleOffers } from "@/lib/offers";
@@ -78,28 +77,27 @@ export function AdminPanel({
   dictionary,
 }: {
   settings: SiteSettings;
-  counts: { pages: number; locales: number; offers: number };
+  counts: { pages: number; offers: number };
   dictionary: Dictionary;
 }) {
   const [tab, setTab] = useState<Tab>("dashboard");
   const [state, formAction, pending] = useActionState(saveSettings, IDLE);
   const dict = dictionary;
-  const [emailLocale, setEmailLocale] = useState<Locale>("pl");
   const [template, setTemplate] = useState<"welcome" | "confirm" | "deal">("welcome");
   const [copied, setCopied] = useState(false);
 
   const email = useMemo(() => {
-    if (template === "welcome") return welcomeEmailParts(emailLocale);
-    if (template === "confirm") return confirmEmailParts(emailLocale);
+    if (template === "welcome") return welcomeEmailParts();
+    if (template === "confirm") return confirmEmailParts();
     const destination = DESTINATIONS[0];
     const live = visibleOffers({ destination: destination.slug });
     const minPrice = live.length ? Math.min(...live.map((offer) => offer.price)) : null;
-    return dealEmailParts(emailLocale, {
-      destination: destination.name[emailLocale],
-      price: minPrice !== null ? formatPrice(minPrice, emailLocale) : "—",
-      url: `https://polskatraveldeals.vercel.app/${emailLocale === "pl" ? "" : emailLocale + "/"}destinations/${destination.slug}`,
+    return dealEmailParts({
+      destination: destination.name,
+      price: minPrice !== null ? formatPrice(minPrice) : "—",
+      url: `https://polskatraveldeals.vercel.app/destinations/${destination.slug}`,
     });
-  }, [template, emailLocale]);
+  }, [template]);
 
   const statusText =
     state.status === "success"
@@ -120,7 +118,7 @@ export function AdminPanel({
       settings,
       partners: PARTNERS,
       offers: OFFERS,
-      destinations: DESTINATIONS.map((d) => ({ slug: d.slug, name: d.name.pl, region: d.region })),
+      destinations: DESTINATIONS.map((d) => ({ slug: d.slug, name: d.name, region: d.region })),
       exportedAt: new Date().toISOString(),
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -181,10 +179,9 @@ export function AdminPanel({
 
         {tab === "dashboard" ? (
           <div className="flex flex-col gap-6">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 { label: dict.admin.stats.pages, value: counts.pages },
-                { label: dict.admin.stats.locales, value: counts.locales },
                 { label: dict.admin.stats.offers, value: counts.offers },
                 {
                   label: dict.admin.stats.lastSaved,
@@ -320,8 +317,8 @@ export function AdminPanel({
                     <tr key={offer.id} className="border-b border-ink-900/5">
                       <td className="px-4 py-3 font-mono text-xs text-ink-700">{offer.id}</td>
                       <td className="px-4 py-3">{offer.kind}</td>
-                      <td className="max-w-[240px] truncate px-4 py-3">{offerTitle(offer, "pl")}</td>
-                      <td className="px-4 py-3">{formatPrice(offer.price, "pl")}</td>
+                      <td className="max-w-[240px] truncate px-4 py-3">{offerTitle(offer)}</td>
+                      <td className="px-4 py-3">{formatPrice(offer.price)}</td>
                       <td className="px-4 py-3">{offer.rating}</td>
                       <td className="px-4 py-3">{offer.partner}</td>
                       <td className="px-4 py-3">
@@ -382,17 +379,6 @@ export function AdminPanel({
                 <option value="welcome">{dict.emails.welcomeSubject}</option>
                 <option value="confirm">{dict.emails.confirmTitle}</option>
                 <option value="deal">{dict.emails.dealTitle}</option>
-              </select>
-              <select
-                value={emailLocale}
-                onChange={(event) => setEmailLocale(event.target.value as Locale)}
-                className="h-10 rounded-full border border-ink-900/12 bg-white px-4 text-sm font-semibold"
-              >
-                {LOCALES.map((code) => (
-                  <option key={code} value={code}>
-                    {LOCALE_META[code].flag} {LOCALE_META[code].name}
-                  </option>
-                ))}
               </select>
               <button
                 type="button"

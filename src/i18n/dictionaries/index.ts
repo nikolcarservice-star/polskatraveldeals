@@ -1,18 +1,10 @@
-import { pl, type Dictionary } from "./pl";
-import { uk } from "./uk";
-import { ru } from "./ru";
-import { en } from "./en";
-import { DEFAULT_LOCALE, type Locale } from "@/lib/brand";
+import { pl } from "./pl";
 
-export type { Dictionary };
+export type Dictionary = typeof pl;
 
-const dictionaries: Record<Locale, Dictionary> = { pl, uk, ru, en };
+export const dict: Dictionary = pl;
 
-export function getDictionary(locale: Locale): Dictionary {
-  return dictionaries[locale] ?? dictionaries[DEFAULT_LOCALE];
-}
-
-/** Replace `{token}` placeholders inside translated strings. */
+/** Replace `{token}` placeholders inside strings. */
 export function interpolate(
   template: string,
   values: Record<string, string | number>

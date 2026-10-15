@@ -1,7 +1,6 @@
 import { SearchPanel, type SearchType } from "@/components/search-panel";
 import { OfferExplorer } from "@/components/offer-explorer";
 import type { Dictionary } from "@/i18n/dictionaries";
-import type { Locale } from "@/lib/brand";
 import type { Offer, OfferKind } from "@/lib/offers";
 
 const KIND_TO_TYPE: Record<OfferKind, SearchType> = {
@@ -12,14 +11,12 @@ const KIND_TO_TYPE: Record<OfferKind, SearchType> = {
 };
 
 export function CategoryView({
-  locale,
   dict,
   kind,
   title,
   lead,
   offers,
 }: {
-  locale: Locale;
   dict: Dictionary;
   kind: OfferKind;
   title: string;
@@ -41,11 +38,11 @@ export function CategoryView({
       </section>
 
       <div id="szukaj" className="container-page relative z-20 -mt-24 md:-mt-28">
-        <SearchPanel locale={locale} dict={dict} initialType={KIND_TO_TYPE[kind]} />
+        <SearchPanel dict={dict} initialType={KIND_TO_TYPE[kind]} />
       </div>
 
       <section className="container-page py-14 md:py-20">
-        <OfferExplorer offers={offers} locale={locale} dict={dict} />
+        <OfferExplorer offers={offers} dict={dict} />
       </section>
     </>
   );

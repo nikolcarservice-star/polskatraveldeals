@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { localizedPath, type Locale } from "@/lib/brand";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { CITIES, DESTINATIONS } from "@/lib/data";
 
@@ -18,11 +17,9 @@ const FIELD_LABEL: Record<SearchType, { primary: keyof Dictionary["search"]; sec
 };
 
 export function SearchPanel({
-  locale,
   dict,
   initialType = "tours",
 }: {
-  locale: Locale;
   dict: Dictionary;
   initialType?: SearchType;
 }) {
@@ -38,8 +35,8 @@ export function SearchPanel({
   const primaryLabel = dict.search[labels.primary] as string;
   const secondaryLabel = dict.search[labels.secondary] as string;
 
-  const destinationList = useMemo(() => DESTINATIONS.map((d) => d.name[locale]), [locale]);
-  const cityList = useMemo(() => Object.values(CITIES).map((c) => c[locale]), [locale]);
+  const destinationList = useMemo(() => DESTINATIONS.map((d) => d.name), []);
+  const cityList = useMemo(() => Object.values(CITIES), []);
 
   function submit(event: React.FormEvent) {
     event.preventDefault();
@@ -50,7 +47,7 @@ export function SearchPanel({
     if (type !== "flights" && date) params.set("date", date);
     if (type === "flights" && date) params.set("date", date);
     params.set("guests", guests);
-    router.push(`${localizedPath(locale, "/search")}?${params.toString()}`);
+    router.push(`/search?${params.toString()}`);
   }
 
   return (

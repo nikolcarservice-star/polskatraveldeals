@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { localizedPath, type Locale } from "@/lib/brand";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Icon } from "@/components/icon";
 
@@ -8,12 +7,10 @@ import { Icon } from "@/components/icon";
  * prices, no dead buttons — just a clear explanation of what is happening.
  */
 export function OffersEmpty({
-  locale,
   dict,
   title,
   lead,
 }: {
-  locale: Locale;
   dict: Dictionary;
   title?: string;
   lead?: string;
@@ -34,13 +31,13 @@ export function OffersEmpty({
       </p>
       <div className="flex flex-wrap justify-center gap-3 pt-1">
         <Link
-          href={localizedPath(locale, "/about")}
+          href="/about"
           className="inline-flex h-11 items-center rounded-full bg-navy-800 px-6 text-sm font-semibold text-white transition hover:bg-navy-700"
         >
           {dict.common.learnMore}
         </Link>
         <Link
-          href={localizedPath(locale, "/contact")}
+          href="/contact"
           className="inline-flex h-11 items-center rounded-full border border-ink-900/15 px-6 text-sm font-semibold text-ink-900 transition hover:border-navy-700 hover:text-navy-800"
         >
           {dict.nav.contact}

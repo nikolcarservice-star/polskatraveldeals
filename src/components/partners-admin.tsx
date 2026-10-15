@@ -2,7 +2,6 @@
 
 import { useActionState, useState } from "react";
 import Link from "next/link";
-import { LOCALES, LOCALE_META } from "@/lib/brand";
 import { DESTINATIONS } from "@/lib/data";
 import type { Partner, PartnerKey } from "@/lib/partners";
 import type { Offer } from "@/lib/offers";
@@ -105,7 +104,7 @@ export function PartnersAdmin({
           <ul className="mt-4 flex flex-col gap-1.5 text-xs text-ink-600">
             {stats.recent.map((row, index) => (
               <li key={`${row.ts}-${index}`} className="flex flex-wrap gap-2 font-mono">
-                <span className="text-ink-600/70">{formatDateTime(row.ts, "pl")}</span>
+                <span className="text-ink-600/70">{formatDateTime(row.ts)}</span>
                 <span className="font-semibold text-navy-700">{row.partner}</span>
                 <span className="text-ink-600/70">{row.sub}</span>
               </li>
@@ -238,20 +237,14 @@ export function PartnersAdmin({
 
                   <fieldset className="flex flex-col gap-2">
                     <span className={label}>{dict.partners.ctaLabel}</span>
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                      {LOCALES.map((code) => (
-                        <label key={code} className="flex flex-col gap-1.5">
-                          <span className="text-xs text-ink-600">
-                            {LOCALE_META[code].flag} {LOCALE_META[code].name}
-                          </span>
-                          <input
-                            name={`cta${code.charAt(0).toUpperCase()}${code.slice(1)}`}
-                            defaultValue={partner.cta.label[code]}
-                            className={input}
-                          />
-                        </label>
-                      ))}
-                    </div>
+                    <label className="flex max-w-sm flex-col gap-1.5">
+                      <span className="text-xs text-ink-600">PL</span>
+                      <input
+                        name="cta"
+                        defaultValue={partner.cta.label}
+                        className={input}
+                      />
+                    </label>
                   </fieldset>
 
                   <fieldset className="flex flex-col gap-2">
@@ -355,21 +348,9 @@ export function PartnersAdmin({
           {editing ? <input type="hidden" name="id" value={editing.id} /> : null}
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="flex flex-col gap-1.5">
-              <span className={label}>{dict.partners.offerTitle} (PL)</span>
-              <input name="titlePl" defaultValue={editing?.title?.pl ?? ""} className={input} required />
-            </label>
-            <label className="flex flex-col gap-1.5">
-              <span className={label}>{dict.partners.offerTitle} (EN)</span>
-              <input name="titleEn" defaultValue={editing?.title?.en ?? ""} className={input} />
-            </label>
-            <label className="flex flex-col gap-1.5">
-              <span className={label}>{dict.partners.offerTitle} (UA)</span>
-              <input name="titleUk" defaultValue={editing?.title?.uk ?? ""} className={input} />
-            </label>
-            <label className="flex flex-col gap-1.5">
-              <span className={label}>{dict.partners.offerTitle} (RU)</span>
-              <input name="titleRu" defaultValue={editing?.title?.ru ?? ""} className={input} />
+            <label className="flex flex-col gap-1.5 sm:col-span-2">
+              <span className={label}>{dict.partners.offerTitle}</span>
+              <input name="title" defaultValue={editing?.title ?? ""} className={input} required />
             </label>
 
             <label className="flex flex-col gap-1.5 sm:col-span-2">
@@ -448,7 +429,7 @@ export function PartnersAdmin({
                 <option value="">—</option>
                 {DESTINATIONS.map((destination) => (
                   <option key={destination.slug} value={destination.slug}>
-                    {destination.name.pl}
+                    {destination.name}
                   </option>
                 ))}
               </select>
@@ -513,8 +494,8 @@ export function PartnersAdmin({
             <tbody>
               {manual.map((offer) => (
                 <tr key={offer.id} className="border-b border-ink-900/5">
-                  <td className="max-w-[260px] truncate px-4 py-3">{offer.title?.pl ?? offer.id}</td>
-                  <td className="px-4 py-3">{formatPrice(offer.price, "pl")}</td>
+                  <td className="max-w-[260px] truncate px-4 py-3">{offer.title ?? offer.id}</td>
+                  <td className="px-4 py-3">{formatPrice(offer.price)}</td>
                   <td className="max-w-[220px] truncate px-4 py-3 text-xs text-ink-600">
                     {offer.source || "—"}
                   </td>
@@ -579,7 +560,7 @@ export function PartnersAdmin({
               {offers.map((offer) => (
                 <tr key={offer.id} className="border-b border-ink-900/5">
                   <td className="px-4 py-3 font-mono text-xs text-ink-700">{offer.id}</td>
-                  <td className="max-w-[280px] truncate px-4 py-3">{offer.title?.pl ?? offer.id}</td>
+                  <td className="max-w-[280px] truncate px-4 py-3">{offer.title ?? offer.id}</td>
                   <td className="px-4 py-3">{offer.partner}</td>
                   <td className="px-4 py-3">
                     <form action={toggleAction} className="flex items-center gap-2">

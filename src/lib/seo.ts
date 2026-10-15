@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { BRAND, LOCALES, SLOGANS, localizedPath, type Locale } from "@/lib/brand";
+import { BRAND } from "@/lib/brand";
 import { getSettings } from "@/lib/settings";
 
 interface SeoInput {
-  locale: Locale;
   title?: string;
   description?: string;
   path?: string;
@@ -12,16 +11,7 @@ interface SeoInput {
   index?: boolean;
 }
 
-function languageAlternates(path: string) {
-  const out: Record<string, string> = {};
-  for (const locale of LOCALES) {
-    out[locale] = BRAND.url + localizedPath(locale, path);
-  }
-  return out;
-}
-
 export function buildMetadata({
-  locale,
   title,
   description,
   path = "/",
@@ -46,14 +36,12 @@ export function buildMetadata({
     publisher: BRAND.legalName,
     category: "travel",
     alternates: {
-      canonical: BRAND.url + localizedPath(locale, path),
-      languages: languageAlternates(path),
+      canonical: BRAND.url + path,
     },
     openGraph: {
       type,
-      locale: locale === "pl" ? "pl_PL" : locale === "uk" ? "uk_UA" : locale === "ru" ? "ru_RU" : "en_GB",
-      alternateLocale: LOCALES.filter((l) => l !== locale),
-      url: BRAND.url + localizedPath(locale, path),
+      locale: "pl_PL",
+      url: BRAND.url + path,
       siteName: BRAND.name,
       title: finalTitle,
       description: finalDescription,
@@ -75,8 +63,4 @@ export function buildMetadata({
 export function pageTitle(title: string | undefined, fallback: string) {
   if (!title) return `${fallback} | ${BRAND.name}`;
   return `${title} | ${BRAND.name}`;
-}
-
-export function sloganFor(locale: Locale): string {
-  return SLOGANS[locale];
 }
