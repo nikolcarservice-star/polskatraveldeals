@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Inter, Playfair_Display } from "next/font/google";
+import "@/app/globals.css";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext"],
