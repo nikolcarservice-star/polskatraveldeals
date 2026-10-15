@@ -75,6 +75,12 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
 
           <div className="flex items-center gap-2.5">
             <Link
+              href="/contact"
+              className="hidden items-center rounded-full bg-gradient-to-b from-gold-400 to-gold-600 px-5 py-2.5 text-sm font-bold text-ink-950 shadow-gold transition hover:from-gold-300 hover:to-gold-500 lg:inline-flex"
+            >
+              {dict.nav.pickTour}
+            </Link>
+            <Link
               href="/#szukaj"
               className="hidden rounded-full bg-navy-800 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_25px_-12px_rgb(15_47_82/0.9)] transition hover:bg-navy-700 sm:inline-flex"
             >
@@ -112,12 +118,19 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
                   {item.label}
                 </Link>
               ))}
-              <div className="mt-3 flex items-center justify-between gap-3 border-t border-ink-900/10 pt-4">
+              <div className="mt-3 flex flex-col gap-2 border-t border-ink-900/10 pt-4">
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-gradient-to-b from-gold-400 to-gold-600 px-5 text-sm font-bold text-ink-950 shadow-gold"
+                >
+                  {dict.nav.pickTour}
+                </Link>
                 <a
                   href="https://t.me/polska_travel_deals"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-navy-800 px-4 py-2 text-sm font-semibold text-white"
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-navy-800 px-4 text-sm font-semibold text-white"
                 >
                   Telegram
                 </a>

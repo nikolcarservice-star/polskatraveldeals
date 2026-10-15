@@ -121,34 +121,35 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink-950/90 via-ink-950/65 to-ink-950/95" />
           <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_20%_0%,rgb(23_69_111/0.55),transparent_60%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink-950 to-transparent" />
         </div>
 
-        <div className="container-page relative z-10 flex flex-col items-start gap-6 pb-36 pt-16 md:pb-44 md:pt-24">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold-400 animate-fade-up">
+        <div className="container-page relative z-10 flex flex-col items-center gap-7 pb-40 pt-20 text-center md:pb-48 md:pt-28">
+          <p className="animate-fade-up text-xs font-bold uppercase tracking-[0.34em] text-gold-400">
             {settings.hero.eyebrow || dict.hero.eyebrow}
           </p>
-          <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[1.06] text-white text-balance-heavy animate-fade-up sm:text-5xl md:text-6xl">
+          <h1 className="max-w-4xl animate-fade-up font-display text-4xl font-semibold leading-[1.06] text-white text-balance-heavy sm:text-5xl md:text-6xl">
             {dict.hero.title}{" "}
             <span className="gold-text">{dict.hero.titleAccent}</span>
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-ivory-200/80 md:text-lg animate-fade-up">
             {settings.hero.lead || dict.hero.lead}
           </p>
-          <div className="flex flex-wrap gap-3 pt-1 animate-fade-up">
+          <div className="flex flex-wrap justify-center gap-4 pt-3 animate-fade-up">
             <a
               href="#szukaj"
-              className="inline-flex h-12 items-center rounded-full bg-gold-500 px-7 text-sm font-bold text-ink-950 shadow-gold transition hover:bg-gold-400"
+              className="inline-flex h-13 items-center rounded-full bg-gradient-to-b from-gold-300 to-gold-500 px-9 py-3.5 text-sm font-bold tracking-wide text-ink-950 shadow-gold transition hover:from-gold-200 hover:to-gold-400"
             >
               {dict.hero.primaryCta}
             </a>
             <Link
               href="/destinations"
-              className="inline-flex h-12 items-center rounded-full border border-white/30 px-7 text-sm font-bold text-white transition hover:border-gold-400 hover:text-gold-300"
+              className="inline-flex h-13 items-center rounded-full border border-white/30 bg-white/5 px-9 py-3.5 text-sm font-bold tracking-wide text-white backdrop-blur transition hover:border-gold-400 hover:bg-white/10 hover:text-gold-300"
             >
               {dict.hero.secondaryCta}
             </Link>
           </div>
-          <p className="flex flex-wrap gap-x-3 gap-y-1 pt-2 text-xs text-ivory-200/65">
+          <p className="flex flex-wrap justify-center gap-x-3 gap-y-1 pt-3 text-xs text-ivory-200/65">
             {dict.hero.trust}
           </p>
         </div>

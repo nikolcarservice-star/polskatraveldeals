@@ -107,17 +107,17 @@ export function Logo({
 
   const wordmark = (
     <span className="flex flex-col leading-none">
-      <span className={`flex flex-wrap items-baseline gap-x-2 ${primary}`}>
-        <span className="font-display text-[1.32em] font-semibold tracking-[-0.015em]">
-          Polska
-        </span>
-        <span className="font-sans text-[0.72em] font-semibold uppercase tracking-[0.34em] gold-text">
-          Travel Deals
-        </span>
+      <span
+        className={`font-display text-[1.45em] font-semibold tracking-[-0.015em] ${primary}`}
+      >
+        Polska
+      </span>
+      <span className="mt-[0.22em] font-sans text-[0.6em] font-semibold uppercase tracking-[0.44em] gold-text">
+        Travel Deals
       </span>
       {showTagline ? (
         <span
-          className={`mt-1.5 font-sans text-[0.42em] font-medium uppercase tracking-[0.2em] ${secondary}`}
+          className={`mt-[0.5em] font-sans text-[0.4em] font-medium uppercase tracking-[0.2em] ${secondary}`}
         >
           {SLOGAN}
         </span>

@@ -27,6 +27,7 @@ export const pl = {
     skipToContent: "Przejdź do treści",
     admin: "Panel administracyjny",
     search: "Szukaj",
+    pickTour: "Dobierz mi wycieczkę",
   },
   hero: {
     eyebrow: "Premium travel marketplace",
