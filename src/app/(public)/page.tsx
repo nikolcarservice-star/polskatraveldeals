@@ -98,6 +98,12 @@ export default function HomePage() {
     ...live.filter((o) => o.kind === "excursion").slice(0, 1),
   ];
 
+  const tours = live.filter((o) => o.kind === "tour");
+  const hotTours = [
+    ...tours.filter((o) => o.oldPrice),
+    ...tours.filter((o) => !o.oldPrice),
+  ].slice(0, 6);
+
   const stats: { value: number; label: string }[] = [
     { value: PARTNER_LIST.length, label: dict.stats.items.partners },
     { value: DESTINATIONS.length, label: dict.stats.items.destinations },
@@ -159,6 +165,34 @@ export default function HomePage() {
       <div id="szukaj" className="container-page relative z-20 -mt-24 md:-mt-32">
         <SearchPanel dict={dict} />
       </div>
+
+      {/* ---------------- Hot tours ---------------- */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="container-page">
+          <SectionHead
+            eyebrow={dict.hotTours.eyebrow}
+            title={dict.hotTours.title}
+            lead={dict.hotTours.lead}
+          />
+          {hotTours.length > 0 ? (
+            <OfferRail>
+              {hotTours.map((offer) => (
+                <OfferCard key={offer.id} offer={offer} dict={dict} />
+              ))}
+            </OfferRail>
+          ) : (
+            <OffersEmpty dict={dict} />
+          )}
+          <div className="mt-8 flex justify-center">
+            <Link
+              href="/tours"
+              className="inline-flex h-12 items-center rounded-full bg-navy-800 px-7 text-sm font-semibold text-white transition hover:bg-navy-700"
+            >
+              {dict.hotTours.all}
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ---------------- Categories ---------------- */}
       <section className="container-page py-16 md:py-24">

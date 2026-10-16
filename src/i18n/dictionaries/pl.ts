@@ -38,6 +38,12 @@ export const pl = {
     secondaryCta: "Zobacz kierunki",
     trust: "Bez ukrytych opłat · Niezależne porównanie · Wsparcie 7 dni w tygodniu",
   },
+  hotTours: {
+    eyebrow: "Last minute",
+    title: "Gorące wycieczki",
+    lead: "Najczęściej wybierane kierunki z rabatem — te oferty znikają najszybciej.",
+    all: "Zobacz wszystkie gorące oferty",
+  },
   search: {
     tabs: { tours: "Wycieczki", flights: "Loty", hotels: "Hotele", excursions: "Atrakcje" },
     destination: "Kierunek",
