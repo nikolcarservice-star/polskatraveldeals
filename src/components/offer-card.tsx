@@ -42,15 +42,21 @@ export function OfferCard({
           <h3 className="font-display text-lg font-semibold leading-snug text-ink-950">
             {offerTitle(offer)}
           </h3>
-          <span className="shrink-0 rounded-lg bg-navy-800/8 px-2 py-1 text-xs font-bold text-navy-800">
-            ★ {formatRating(offer.rating)}
-          </span>
+          {offer.rating > 0 ? (
+            <span className="shrink-0 rounded-lg bg-navy-800/8 px-2 py-1 text-xs font-bold text-navy-800">
+              ★ {formatRating(offer.rating)}
+            </span>
+          ) : null}
         </div>
 
         {offer.meta ? <p className="text-sm text-ink-600">{offer.meta}</p> : null}
 
         <p className="text-xs text-ink-600/75">
-          {formatNumber(offer.reviews)} {dict.common.rating.toLowerCase()} ·{" "}
+          {offer.reviews > 0 ? (
+            <>
+              {formatNumber(offer.reviews)} {dict.common.rating.toLowerCase()} ·{" "}
+            </>
+          ) : null}
           {partnerName}
         </p>
 

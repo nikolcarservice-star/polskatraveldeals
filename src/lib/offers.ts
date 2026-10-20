@@ -35,6 +35,9 @@ export interface Offer {
   /** Airport keys for flights (title is composed from city names). */
   from?: string;
   to?: string;
+  /** Polish city names supplied by the feed; preferred over the CITIES lookup. */
+  fromName?: string;
+  toName?: string;
 }
 
 export const OFFERS: Offer[] = rawOffers as unknown as Offer[];
@@ -42,8 +45,8 @@ export const OFFERS: Offer[] = rawOffers as unknown as Offer[];
 /** Title; flights are composed from city names. */
 export function offerTitle(offer: Offer): string {
   if (offer.from && offer.to) {
-    const from = CITIES[offer.from] ?? offer.from;
-    const to = CITIES[offer.to] ?? offer.to;
+    const from = offer.fromName ?? CITIES[offer.from] ?? offer.from;
+    const to = offer.toName ?? CITIES[offer.to] ?? offer.to;
     return `${from} → ${to}`;
   }
   return offer.title ?? offer.id;

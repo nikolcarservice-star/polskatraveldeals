@@ -53,8 +53,8 @@ export default async function SearchPage({
       const destination = DESTINATIONS.find((d) => d.slug === offer.destination);
       if (destination) parts.push(destination.name);
     }
-    if (offer.from && CITIES[offer.from]) parts.push(CITIES[offer.from]);
-    if (offer.to && CITIES[offer.to]) parts.push(CITIES[offer.to]);
+    if (offer.from) parts.push(offer.fromName ?? CITIES[offer.from] ?? offer.from);
+    if (offer.to) parts.push(offer.toName ?? CITIES[offer.to] ?? offer.to);
     return parts.join(" ").toLowerCase();
   };
 
