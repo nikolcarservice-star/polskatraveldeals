@@ -9,10 +9,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
     {
       title: dict.footer.explore,
       items: [
-        { href: "/tours", label: dict.nav.tours },
         { href: "/flights", label: dict.nav.flights },
-        { href: "/hotels", label: dict.nav.hotels },
-        { href: "/excursions", label: dict.nav.excursions },
         { href: "/destinations", label: dict.nav.destinations },
       ],
     },

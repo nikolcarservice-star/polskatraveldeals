@@ -5,10 +5,7 @@ import { LEGAL_SLUGS } from "@/content/legal";
 
 const ROUTES = [
   "/",
-  "/tours",
   "/flights",
-  "/hotels",
-  "/excursions",
   "/destinations",
   "/about",
   "/contact",

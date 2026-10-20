@@ -46,12 +46,17 @@ export default async function DestinationDetailPage({
 
   // Real per-kind counts of live (approved + published) offers — never
   // decorative totals.
-  const countOf = (kind: "tour" | "hotel" | "excursion") =>
-    offers.filter((offer) => offer.kind === kind).length;
+  const countOf = (kind: "flight") => offers.filter((offer) => offer.kind === kind).length;
+  const directCount = offers.filter((offer) => offer.meta?.includes("bez przesiadek")).length;
+  const airlinesCount = new Set(
+    offers
+      .map((offer) => (offer.meta ?? "").split("·").pop()?.trim() ?? "")
+      .filter(Boolean)
+  ).size;
   const stats: { label: string; value: number }[] = [
-    { label: dict.destinations.tours, value: countOf("tour") },
-    { label: dict.destinations.hotels, value: countOf("hotel") },
-    { label: dict.destinations.excursions, value: countOf("excursion") },
+    { label: dict.destinations.flights, value: countOf("flight") },
+    { label: dict.destinations.direct, value: directCount },
+    { label: dict.destinations.airlines, value: airlinesCount },
   ];
   const minPrice = offers.length
     ? Math.min(...offers.map((offer) => offer.price))

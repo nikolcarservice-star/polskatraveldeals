@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { dict, interpolate } from "@/i18n/dictionaries";
-import { CATEGORY_IMAGES, DESTINATIONS, HERO_IMAGE } from "@/lib/data";
+import { DESTINATIONS, HERO_IMAGE } from "@/lib/data";
+import { BRAND } from "@/lib/brand";
 import { PARTNER_LIST } from "@/lib/partners";
 import { visibleOffers } from "@/lib/offers";
 import { getSettings } from "@/lib/settings";
@@ -76,33 +77,14 @@ const WHY_ICONS: Record<string, string> = {
 export default function HomePage() {
   const settings = getSettings();
 
-  const categories: { key: keyof typeof dict.categories.items; image: string }[] = [
-    { key: "tours", image: CATEGORY_IMAGES.tours },
-    { key: "flights", image: CATEGORY_IMAGES.flights },
-    { key: "hotels", image: CATEGORY_IMAGES.hotels },
-    { key: "excursions", image: CATEGORY_IMAGES.excursions },
-  ];
-
-  const categoryPath: Record<string, string> = {
-    tours: "/tours",
-    flights: "/flights",
-    hotels: "/hotels",
-    excursions: "/excursions",
-  };
-
   const live = visibleOffers();
-  const featured = [
-    ...live.filter((o) => o.kind === "tour").slice(0, 2),
-    ...live.filter((o) => o.kind === "flight").slice(0, 2),
-    ...live.filter((o) => o.kind === "hotel").slice(0, 1),
-    ...live.filter((o) => o.kind === "excursion").slice(0, 1),
-  ];
-
-  const tours = live.filter((o) => o.kind === "tour");
-  const hotTours = [
-    ...tours.filter((o) => o.oldPrice),
-    ...tours.filter((o) => !o.oldPrice),
+  const flights = live.filter((o) => o.kind === "flight");
+  const hotFlights = [
+    ...flights.filter((o) => o.tag),
+    ...flights.filter((o) => !o.tag),
   ].slice(0, 6);
+  const hotIds = new Set(hotFlights.map((o) => o.id));
+  const featured = flights.filter((o) => !hotIds.has(o.id)).slice(0, 6);
 
   const stats: { value: number; label: string }[] = [
     { value: PARTNER_LIST.length, label: dict.stats.items.partners },
@@ -112,8 +94,39 @@ export default function HomePage() {
 
   const testimonialKeys = ["anna", "marek", "olena"] as const;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${BRAND.url}/#organization`,
+        name: BRAND.name,
+        url: BRAND.url,
+        logo: `${BRAND.url}/icon.svg`,
+        sameAs: [BRAND.telegram],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${BRAND.url}/#website`,
+        url: BRAND.url,
+        name: BRAND.name,
+        inLanguage: "pl-PL",
+        publisher: { "@id": `${BRAND.url}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: { "@type": "EntryPoint", urlTemplate: `${BRAND.url}/search?q={search_term_string}` },
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ---------------- Hero ---------------- */}
       <section className="relative overflow-hidden bg-ink-950">
         <div className="absolute inset-0">
@@ -166,17 +179,17 @@ export default function HomePage() {
         <SearchPanel dict={dict} />
       </div>
 
-      {/* ---------------- Hot tours ---------------- */}
+      {/* ---------------- Hot flights ---------------- */}
       <section className="bg-white py-16 md:py-24">
         <div className="container-page">
           <SectionHead
-            eyebrow={dict.hotTours.eyebrow}
-            title={dict.hotTours.title}
-            lead={dict.hotTours.lead}
+            eyebrow={dict.hotFlights.eyebrow}
+            title={dict.hotFlights.title}
+            lead={dict.hotFlights.lead}
           />
-          {hotTours.length > 0 ? (
+          {hotFlights.length > 0 ? (
             <OfferRail>
-              {hotTours.map((offer) => (
+              {hotFlights.map((offer) => (
                 <OfferCard key={offer.id} offer={offer} dict={dict} />
               ))}
             </OfferRail>
@@ -185,62 +198,12 @@ export default function HomePage() {
           )}
           <div className="mt-8 flex justify-center">
             <Link
-              href="/tours"
+              href="/flights"
               className="inline-flex h-12 items-center rounded-full bg-navy-800 px-7 text-sm font-semibold text-white transition hover:bg-navy-700"
             >
-              {dict.hotTours.all}
+              {dict.hotFlights.all}
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* ---------------- Categories ---------------- */}
-      <section className="container-page py-16 md:py-24">
-        <SectionHead
-          eyebrow={dict.categories.title}
-          title={dict.categories.title}
-          lead={dict.categories.lead}
-        />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category) => {
-            const cta =
-              category.key === "tours"
-                ? dict.categories.toursCta
-                : category.key === "flights"
-                  ? dict.categories.flightsCta
-                  : category.key === "hotels"
-                    ? dict.categories.hotelsCta
-                    : dict.categories.excursionsCta;
-            return (
-            <Link
-              key={category.key}
-              href={categoryPath[category.key]}
-              className="group surface-card flex flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-lift"
-            >
-              <div className="relative aspect-[16/11] overflow-hidden">
-                <Image
-                  src={category.image}
-                  alt={dict.categories.items[category.key].title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 25vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex flex-1 flex-col gap-2 p-5">
-                <h3 className="font-display text-lg font-semibold text-ink-950">
-                  {dict.categories.items[category.key].title}
-                </h3>
-                <p className="text-sm leading-relaxed text-ink-600">
-                  {dict.categories.items[category.key].desc}
-                </p>
-                <span className="mt-auto flex items-center gap-1.5 pt-3 text-sm font-semibold text-navy-700 transition group-hover:gap-2.5 group-hover:text-gold-600">
-                  {cta}
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </Link>
-            );
-          })}
         </div>
       </section>
 
@@ -277,9 +240,9 @@ export default function HomePage() {
       {/* ---------------- Featured offers ---------------- */}
       <section className="container-page py-16 md:py-24">
         <SectionHead
-          eyebrow={dict.nav.search}
+          eyebrow={dict.nav.flights}
           title={dict.search.results}
-          lead={interpolate(dict.search.resultsCount, { count: String(live.length) })}
+          lead={interpolate(dict.search.resultsCount, { count: String(flights.length) })}
         />
         {featured.length > 0 ? (
           <OfferRail>
@@ -292,10 +255,10 @@ export default function HomePage() {
         )}
         <div className="mt-8 flex flex-col items-center gap-4">
           <Link
-            href="/tours"
+            href="/flights"
             className="inline-flex h-12 items-center rounded-full bg-navy-800 px-7 text-sm font-semibold text-white transition hover:bg-navy-700"
           >
-            {dict.search.showAll}
+            {dict.hotFlights.all}
           </Link>
           <p className="max-w-2xl text-center text-xs leading-relaxed text-ink-600/80">
             {dict.affiliate.note}

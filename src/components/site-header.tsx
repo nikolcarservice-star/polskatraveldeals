@@ -13,10 +13,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
   const segments = pathname.split("/").filter(Boolean);
 
   const nav = [
-    { href: "/tours", label: dict.nav.tours },
     { href: "/flights", label: dict.nav.flights },
-    { href: "/hotels", label: dict.nav.hotels },
-    { href: "/excursions", label: dict.nav.excursions },
     { href: "/destinations", label: dict.nav.destinations },
     { href: "/about", label: dict.nav.about },
     { href: "/contact", label: dict.nav.contact },
@@ -78,7 +75,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
               href="/contact"
               className="hidden items-center rounded-full bg-gradient-to-b from-gold-400 to-gold-600 px-5 py-2.5 text-sm font-bold text-ink-950 shadow-gold transition hover:from-gold-300 hover:to-gold-500 lg:inline-flex"
             >
-              {dict.nav.pickTour}
+              {dict.nav.pickFlight}
             </Link>
             <Link
               href="/#szukaj"
@@ -124,7 +121,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
                   onClick={() => setOpen(false)}
                   className="inline-flex h-11 items-center justify-center rounded-full bg-gradient-to-b from-gold-400 to-gold-600 px-5 text-sm font-bold text-ink-950 shadow-gold"
                 >
-                  {dict.nav.pickTour}
+                  {dict.nav.pickFlight}
                 </Link>
                 <a
                   href="https://t.me/polska_travel_deals"

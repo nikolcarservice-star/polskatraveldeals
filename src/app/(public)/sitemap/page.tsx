@@ -16,13 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function SitemapPage() {
   const groups: { title: string; links: { href: string; label: string }[] }[] = [
     {
-      title: dict.nav.destinations,
+      title: dict.footer.explore,
       links: [
         { href: "/", label: dict.notFound.home },
-        { href: "/tours", label: dict.nav.tours },
         { href: "/flights", label: dict.nav.flights },
-        { href: "/hotels", label: dict.nav.hotels },
-        { href: "/excursions", label: dict.nav.excursions },
         { href: "/destinations", label: dict.destinations.title },
         { href: "/search", label: dict.nav.search },
       ],

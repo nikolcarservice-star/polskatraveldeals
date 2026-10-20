@@ -33,13 +33,7 @@ export default async function SearchPage({
 }) {
   const query = await searchParams;
 
-  const rawType = first(query.type);
-  const type: SearchType =
-    rawType === "flights" || rawType === "hotels" || rawType === "excursions"
-      ? rawType
-      : rawType === "tours"
-        ? "tours"
-        : "tours";
+  const type: SearchType = "flights";
 
   const q = first(query.q).trim();
   const from = first(query.from).trim();

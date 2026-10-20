@@ -7,7 +7,7 @@ import { CITIES, DESTINATIONS } from "@/lib/data";
 
 export type SearchType = "tours" | "flights" | "hotels" | "excursions";
 
-const TABS: SearchType[] = ["tours", "flights", "hotels", "excursions"];
+const TABS: SearchType[] = ["flights"];
 
 const FIELD_LABEL: Record<SearchType, { primary: keyof Dictionary["search"]; secondary: keyof Dictionary["search"] }> = {
   tours: { primary: "destination", secondary: "origin" },
@@ -18,7 +18,7 @@ const FIELD_LABEL: Record<SearchType, { primary: keyof Dictionary["search"]; sec
 
 export function SearchPanel({
   dict,
-  initialType = "tours",
+  initialType = "flights",
 }: {
   dict: Dictionary;
   initialType?: SearchType;

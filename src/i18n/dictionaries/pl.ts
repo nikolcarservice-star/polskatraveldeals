@@ -1,14 +1,17 @@
 export const pl = {
   meta: {
-    defaultTitle: "POLSKA TRAVEL DEALS — wycieczki, loty, hotele i wycieczki fakultatywne",
+    defaultTitle: "Tanie loty z Polski — porównywarka biletów lotniczych",
     titleTemplate: "%s | POLSKA TRAVEL DEALS",
     defaultDescription:
-      "Porównuj oferty wycieczek, biletów lotniczych, hoteli i wycieczek fakultatywnych w jednym miejscu. Odkrywaj świat i podróżuj taniej z POLSKA TRAVEL DEALS.",
+      "Porównuj tanie loty z Polski do Europy i świata — Ryanair, Wizz Air i linie regularne. Bilety lotnicze z Warszawy, Krakowa, Katowic, Wrocławia i 10 innych lotnisk w cenach od 136 zł.",
     keywords: [
-      "tanie wycieczki",
+      "tanie loty",
+      "bilety lotnicze",
       "porównywarka lotów",
-      "hotele",
-      "wycieczki fakultatywne",
+      "loty z Polski",
+      "tanie przeloty",
+      "loty Warszawa",
+      "loty Kraków",
       "POLSKA TRAVEL DEALS",
     ],
   },
@@ -28,21 +31,22 @@ export const pl = {
     admin: "Panel administracyjny",
     search: "Szukaj",
     pickTour: "Dobierz mi wycieczkę",
+    pickFlight: "Szukaj taniego lotu",
   },
   hero: {
-    eyebrow: "Premium travel marketplace",
-    title: "Odkrywaj świat.",
-    titleAccent: "Podróżuj taniej.",
-    lead: "Porównujemy oferty sprawdzonych partnerów — wycieczki, przeloty, hotele i lokalne atrakcje — żebyś znalazł najlepszą cenę w kilka sekund.",
-    primaryCta: "Zacznij wyszukiwanie",
+    eyebrow: "Tanie loty z polskich lotnisk",
+    title: "Łap tanie loty.",
+    titleAccent: "Leciej taniej.",
+    lead: "Codziennie porównujemy ceny przelotów z Warszawy, Krakowa, Katowic i 10 innych lotnisk — pokazujemy najtańsze loty do Europy i świata w jednym miejscu.",
+    primaryCta: "Szukaj lotów",
     secondaryCta: "Zobacz kierunki",
-    trust: "Bez ukrytych opłat · Niezależne porównanie · Wsparcie 7 dni w tygodniu",
+    trust: "Bez ukrytych opłat · Ceny od 136 zł · Oferty codziennie",
   },
-  hotTours: {
+  hotFlights: {
     eyebrow: "Last minute",
-    title: "Gorące wycieczki",
-    lead: "Najczęściej wybierane kierunki z rabatem — te oferty znikają najszybciej.",
-    all: "Zobacz wszystkie gorące oferty",
+    title: "Gorące loty",
+    lead: "Najtańsze przeloty na najbliższe tygodnie — te ceny znikają najszybciej.",
+    all: "Zobacz wszystkie loty",
   },
   search: {
     tabs: { tours: "Wycieczki", flights: "Loty", hotels: "Hotele", excursions: "Atrakcje" },
@@ -114,6 +118,14 @@ export const pl = {
     lead: "Porównaj ceny biletów z setek linii lotniczych i agencji. Rezerwacja odbywa się bezpośrednio u zaufanego partnera.",
     note: "Wyszukiwarka działa na stronie partnera. Cena, bagaż i rezerwacja — zgodnie z warunkami przewoźnika lub agenta.",
   },
+  flightsSeo: {
+    title: "Najtańsze loty z Polski — aktualne okazje",
+    intro: "Sprawdź świeże okazje na przeloty z polskich lotnisk:",
+    outro:
+      "Lista aktualizowana jest codziennie. Kliknij ofertę, aby sprawdzić aktualną cenę, bagaż i zarezerwować bilet bezpośrednio u partnera.",
+    keywords:
+      "Szukasz tanich lotów? Porównujemy połączenia Ryanair i Wizz Air z lotnisk w Warszawie, Krakowie, Katowicach, Wrocławiu, Gdańsku, Poznaniu i Łodzi — na stronę lecisz zawsze przez nasz link partnerski, więc rezerwujesz bez dopłat.",
+  },
   stats: {
     title: "Liczby, które mówią same za siebie",
     items: {
@@ -156,9 +168,9 @@ export const pl = {
     lead: "Sprawdzone miejsca na wakacje, city break i wyjazdy z dziećmi.",
     region: "Region",
     all: "Wszystkie",
-    tours: "wycieczek",
-    hotels: "hoteli",
-    excursions: "atrakcji",
+    flights: "Loty",
+    direct: "Bez przesiadek",
+    airlines: "Linie lotnicze",
     fromPrice: "Ceny od",
     planTrip: "Zaplanuj podróż",
     about: "O kierunku",

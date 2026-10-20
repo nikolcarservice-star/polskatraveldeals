@@ -1,7 +1,7 @@
 {
   "projectName": "POLSKA TRAVEL DEALS",
   "legalName": "Polska Travel Deals",
-  "slogan": "Odkrywaj świat. Podróżuj taniej.",
+  "slogan": "Tanie loty. Codziennie nowe ceny.",
   "domain": "polskatraveldeals.vercel.app",
   "url": "https://polskatraveldeals.vercel.app",
   "contactEmail": "kontakt@polskatraveldeals.vercel.app",
@@ -10,13 +10,13 @@
   "telegram": "https://t.me/polska_travel_deals",
   "telegramHandle": "@polska_travel_deals",
   "seo": {
-    "title": "POLSKA TRAVEL DEALS — wycieczki, loty, hotele i wycieczki fakultatywne",
-    "description": "Porównuj oferty wycieczek, biletów lotniczych, hoteli i wycieczek fakultatywnych w jednym miejscu. Odkrywaj świat i podróżuj taniej z POLSKA TRAVEL DEALS.",
-    "keywords": "tanie wycieczki, porównywarka lotów, hotele, wycieczki fakultatywne, POLSKA TRAVEL DEALS"
+    "title": "Tanie loty z Polski — porównywarka biletów lotniczych | POLSKA TRAVEL DEALS",
+    "description": "Porównuj tanie loty z Polski do Europy i świata. Bilety lotnicze Ryanair, Wizz Air i linii regularnych z Warszawy, Krakowa, Katowic i 10 innych lotnisk — ceny od 136 zł, aktualizowane codziennie.",
+    "keywords": "tanie loty, bilety lotnicze, porównywarka lotów, loty z Polski, tanie przeloty, loty Ryanair, loty Wizz Air, loty Warszawa, loty Kraków, POLSKA TRAVEL DEALS"
   },
   "hero": {
-    "eyebrow": "Premium travel marketplace",
-    "lead": "Porównujemy oferty sprawdzonych partnerów — wycieczki, przeloty, hotele i lokalne atrakcje — żebyś znalazł najlepszą cenę w kilka sekund.",
+    "eyebrow": "Tanie loty z polskich lotnisk",
+    "lead": "Codziennie porównujemy ceny przelotów z Warszawy, Krakowa, Katowic i 10 innych lotnisk — pokazujemy najtańsze loty do Europy i świata w jednym miejscu.",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Amalfi_Coast_%28Italy%2C_October_2020%29_-_75_%2850558355441%29.jpg/1920px-Amalfi_Coast_%28Italy%2C_October_2020%29_-_75_%2850558355441%29.jpg"
   },
   "newsletter": {
